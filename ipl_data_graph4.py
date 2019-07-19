@@ -43,7 +43,7 @@ for b in bowler:
                 over += 1
 
     d[run/over]= b
-data = {}     #for top 5 bowler
+data = {}     #for top 5 bowler economy
 count =0
 for i in sorted(d.keys(),reverse=True):
     if count<5:
@@ -51,7 +51,8 @@ for i in sorted(d.keys(),reverse=True):
         count = count+1
     else:
         break
-print(data)
+#print(data)
+#plot graph
 plt.bar(data.keys(),data.values(),width= 0.5, color='g')
 plt.title("Top 5 Economical Bowler of year 2015",fontweight='bold')
 plt.xlabel("Bowlers",fontweight='bold')
