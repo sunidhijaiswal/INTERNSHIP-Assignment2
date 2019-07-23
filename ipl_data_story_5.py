@@ -12,20 +12,20 @@ def transform():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            year.append(row[1])
+            year.insert(len(year),row[1])
             if row[4] not in team:
-                team.append(row[4])
+                team.insert(len(team),row[4])
+                team.sort()
     with open("deliveries.csv",'r') as file1:
         reader = csv.reader(file1)
         next(reader)                               #removing header
         for row in reader:
-            total_runs.append(row[17])
-            match_id.append(row[0])
-            batting_team.append(row[2])
+            total_runs.insert(len(total_run),row[17])
+            match_id.insert(len(match_id),row[0])
+            batting_team.insert(len(batting_team),row[2])
            # print(row)
 
 transform()
-team.sort()
 total = []
 # it take index of 2015
 first = year.index(str(2015))
