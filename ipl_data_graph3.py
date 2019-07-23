@@ -12,20 +12,20 @@ def transform():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            year.append(row[1])
+            year.insert(len(year),row[1])
             if row[4] not in team:
-                team.append(row[4])
+                team.insert(len(team),row[4])
+                team.sort()
     with open("deliveries.csv",'r') as file1:
         reader = csv.reader(file1)
         next(reader)                               #removing header
         for row in reader:
-            extra_runs.append(row[16])
-            match_id.append(row[0])
-            bowling_team.append(row[3])
+            extra_runs.insert(len(extra_run),row[16])
+            match_id.insert(len(match_id),row[0])
+            bowling_team.insert(len(bowling_team),row[3])
            # print(row)
 
 transform()
-team.sort()
 extra = []
 # it takes 2016 index
 first = year.index(str(2016))
