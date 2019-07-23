@@ -11,13 +11,12 @@ def transform():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            winner.append(row[10])
-            years.append(row[1])
-            Team.append(row[4])
+            winner.insert(len(winner),row[10])
+            years.insert(len(years),row[1])
+            years.sort()
+            Team.insert(len(Team),row[4])
     file.close()
-transform()
-year = list(set(years))
-year.sort()
+transform() 
 Teams = list(set(Team))
 winner_team = []
 #calculate no no_of won matches over all year
